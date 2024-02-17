@@ -1,0 +1,53 @@
+﻿@model Mission06_Alley.Models.Submission
+
+<h1>Add a Movie to Joel's Collection</h1>
+
+<fiedset>
+    <legend text-align:center;>Add Movie:</legend>
+    <form method="post">
+        <label asp-for="MovieID">MovieID:</label>
+        <input type="number" asp-for="MovieID" name="year" required />
+        <label asp-for="Category">Category:</label><br />
+        <input type="text" asp-for="Category" id="category" required autofocus />
+        <br />
+        <br />
+        <label asp-for="Title">Title:</label><br />
+        <input type="text" asp-for="Title" name="title" required/>
+        <br />
+        <br />
+        <label asp-for="Year">Year:</label>
+        <input type="number" asp-for="Year" name="year" required/>
+        <br />
+        <br />
+        <label asp-for="Director">Director:</label>
+        <input type="text" asp-for="Director" name="director" required />
+        <br />
+        <br />
+        <label asp-for="Rating">Rating:</label>
+        <select asp-for="Rating" name="rating" required>
+            <option value="G">G</option>
+            <option value="PG">PG</option>
+            <option value="PG13">PG-13</option>
+            <option value="R">R</option>
+        </select>
+        <br />
+        <br />
+        <label asp-for="Edited">Edited:</label>
+        <select id="edited" asp-for="Edited" value=" ">
+            <option value=" "> </option>
+            <option value="true">True</option>
+            <option value="false">False</option>
+        </select>
+        <br />
+        <br />
+        <label asp-for="LentTo">Lent to:</label>
+        <input type="text" id="lent" asp-for="LentTo" />
+        <br />
+        <br />
+        <label asp-for="Notes">Notes:</label>
+        <input type="text" asp-for="Notes" name="notes" maxlength="25"/>
+        <br />
+        <br />
+        <button type="submit">Submit</button>
+    </form>
+</fiedset>
