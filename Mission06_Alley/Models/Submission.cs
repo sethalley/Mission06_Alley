@@ -15,9 +15,10 @@ namespace Mission06_Alley.Models
         public string Title { get; set; }
         [Required(ErrorMessage = "Enter a Title")]
 
+
+        [Range(1888, 2024, ErrorMessage = "The year must be between 1888 and 2024")]
         public int Year { get; set; } = 2000;
         [Required(ErrorMessage = "Enter a Year")]
-        
 
 
         public string? Director { get; set; }
