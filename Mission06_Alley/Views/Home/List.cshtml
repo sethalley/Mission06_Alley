@@ -1,0 +1,34 @@
+﻿@model List<Mission06_Alley.Models.Submission>
+
+<table class="table table-bordered">
+    <thead class="fw-bold">
+        <tr>
+            <td>Category</td>
+            <td>Title</td>
+            <td>Year</td>
+            <td>Director</td>
+            <td>Rating</td>
+            <td>Edited</td>
+            <td>Lent to:</td>
+            <td>Notes</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var submission in Model)
+        {
+            <tr>
+                <td>@submission.CategoryId</td>
+                <td>@submission.Title</td>
+                <td>@submission.Year</td>
+                <td>@submission.Director</td>
+                <td>@submission.Rating</td>
+                <td>@submission.Edited</td>
+                <td>@submission.LentTo</td>
+                <td>@submission.Notes</td>
+
+                <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@submission.MovieId">Edit</a></td>
+                <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@submission.MovieId">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

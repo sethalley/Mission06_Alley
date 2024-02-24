@@ -1,58 +1,79 @@
+/* General Styles */
 html {
-  font-size: 14px;
+    font-size: 14px; /* Base font size */
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+    html {
+        font-size: 16px; /* Increase font size on larger screens */
+    }
 }
 
 body {
-  margin-bottom: 60px;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Use a common sans-serif font */
+    background-color: #fafafa; /* Cream-colored background */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body extends to at least the height of the viewport */
 }
 
+/* Global link and button styles */
+a,
+button {
+    text-decoration: none; /* Remove default underline on links */
+    cursor: pointer;
+}
+
+/* Button Focus Styles */
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb; /* Custom focus effect */
+}
+
+/* Center-aligned text */
 .text-center {
     text-align: center;
 }
 
+/* Heading Styles */
 .display-4 {
     font-size: 2.5rem;
     font-weight: bold;
 }
 
-p1 {
+/* Paragraph Styles */
+p {
     font-size: 1.2rem;
     line-height: 1.5;
 }
 
-p2 {
-    font-size: 1.1rem;
-    font-weight: bold;
-}
+    /* Bold Paragraph */
+    p.bold {
+        font-weight: bold;
+    }
 
+/* Image Styles */
 img {
     max-width: 100%;
     height: auto;
-    border-radius: 50%;
+    border-radius: 50%; /* Circular border for images */
     margin-top: 20px;
 }
 
-
+/* Form Styles */
 fieldset {
     border: 2px solid #ccc;
     padding: 20px;
-    width: 100px;
+    width: 100%;
+    max-width: 400px; /* Limit width of the fieldset */
     margin: 0 auto;
+    background-color: #fff; /* White background for form */
 }
 
 legend {
@@ -61,9 +82,10 @@ legend {
 }
 
 form {
-    margin-top: 10px;
-    width: 60%;
-    padding-left:25%;
+    margin-top: 20px; /* Increased margin for better separation */
+    width: 80%; /* Adjusted width for better responsiveness */
+    max-width: 400px; /* Limit width of the form */
+    margin: 0 auto; /* Center align the form */
 }
 
 label {
@@ -79,18 +101,9 @@ select {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    box-sizing: border-box; /* Ensure consistent input sizing */
 }
 
 button[type="submit"] {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-    button[type="submit"]:hover {
-        background-color: #0056b3;
-    }

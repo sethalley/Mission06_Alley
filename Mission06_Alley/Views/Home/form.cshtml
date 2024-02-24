@@ -5,35 +5,41 @@
 <fiedset>
     <legend text-align:center;>Add Movie:</legend>
     <form method="post">
-        <label asp-for="MovieID">MovieID:</label>
-        <input type="number" asp-for="MovieID" name="year" required />
-        <label asp-for="Category">Category:</label><br />
-        <input type="text" asp-for="Category" id="category" required autofocus />
+        <input type="hidden" asp-for="MovieId" name="MovieId" />
+        <select asp-for="CategoryId">
+            <option value="">Select a category</option>
+            @foreach (Categories cat in ViewBag.Categories)
+            {
+                <option value="@cat.CategoryId">@cat.CategoryName</option>
+            }
+        </select>
         <br />
         <br />
         <label asp-for="Title">Title:</label><br />
-        <input type="text" asp-for="Title" name="title" required/>
+        <input type="text" asp-for="Title" name="Title" required/>
         <br />
         <br />
         <label asp-for="Year">Year:</label>
-        <input type="number" asp-for="Year" name="year" required/>
+        <input type="number" asp-for="Year" name="Year" required/>
         <br />
         <br />
         <label asp-for="Director">Director:</label>
-        <input type="text" asp-for="Director" name="director" required />
+        <input type="text" asp-for="Director" name="Director" required />
         <br />
         <br />
         <label asp-for="Rating">Rating:</label>
-        <select asp-for="Rating" name="rating" required>
+        <select asp-for="Rating" name="Rating" required>
             <option value="G">G</option>
             <option value="PG">PG</option>
             <option value="PG13">PG-13</option>
             <option value="R">R</option>
+            <option value="NR">NR</option>
+            <option value="PG14">PG-14</option>
         </select>
         <br />
         <br />
         <label asp-for="Edited">Edited:</label>
-        <select id="edited" asp-for="Edited" value=" ">
+        <select id="Edited" asp-for="Edited" value=" ">
             <option value=" "> </option>
             <option value="true">True</option>
             <option value="false">False</option>
@@ -41,13 +47,15 @@
         <br />
         <br />
         <label asp-for="LentTo">Lent to:</label>
-        <input type="text" id="lent" asp-for="LentTo" />
+        <input type="text" id="LentTo" asp-for="LentTo" />
         <br />
         <br />
         <label asp-for="Notes">Notes:</label>
-        <input type="text" asp-for="Notes" name="notes" maxlength="25"/>
+        <input type="text" asp-for="Notes" name="Notes" maxlength="25"/>
         <br />
         <br />
         <button type="submit">Submit</button>
+
+        <div asp-validation-summary="All"></div>
     </form>
 </fiedset>

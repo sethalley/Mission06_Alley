@@ -28,6 +28,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="form">Add Movie</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="List">See Movies</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -38,8 +41,10 @@
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
+    <div class="wrapper">
+        <!-- Your content here -->
+    </div>
+    <footer>
         <div class="container">
             &copy; 2024 - Mission06_Alley - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
